@@ -8,9 +8,11 @@ import EslintWebpackPlugin from 'eslint-webpack-plugin';
 
 // Should resolve problem with devServer,
 // but 'Configuration' extension didn't work
-import 'webpack-dev-server';
+import { Configuration as DevServer } from 'webpack-dev-server';
 
-export default (env: Record<string, any>): Configuration => {
+export default (env: Record<string, any>): Configuration & {
+  devServer: DevServer | null
+} => {
   const isProd = env.NODE_ENV === 'prod';
 
   return {
@@ -29,12 +31,12 @@ export default (env: Record<string, any>): Configuration => {
         : 'static/[name].chunk.js',
     },
     devtool:   isProd ? false : 'source-map',
-    // @ts-ignore
     devServer: {
-      port:   3000,
-      open:   true,
-      hot:    !isProd,
-      client: {
+      port:               3000,
+      open:               true,
+      hot:                !isProd,
+      historyApiFallback: true,
+      client:             {
         overlay: false,
       },
     },
@@ -114,9 +116,10 @@ export default (env: Record<string, any>): Configuration => {
           : 'static/[name].css',
       }),
       new HtmlWebpackPlugin({
-        template: 'public/index.html',
-        favicon:  'public/favicon.ico',
-        minify:   isProd,
+        template:   'public/index.html',
+        favicon:    'public/favicon.ico',
+        minify:     isProd,
+        publicPath: '/',
       }),
       new EslintWebpackPlugin({
         files: 'src/**/*{ts,tsx,js}',

@@ -42,6 +42,8 @@ module.exports = {
     'react/jsx-props-no-spreading':            0,
     'no-use-before-define':                    'off',
     '@typescript-eslint/no-use-before-define': ['error'],
+    indent:                                    'off',
+    '@typescript-eslint/indent':               ['error', 2],
   },
   globals: {
     document: true,
