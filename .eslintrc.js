@@ -8,7 +8,6 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-
   },
   rules: {
     'lines-between-class-members':             ['error', 'always', { exceptAfterSingleLine: true }],
@@ -50,9 +49,18 @@ module.exports = {
       groups:             ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object'],
       'newlines-between': 'always-and-inside-groups',
     }],
+    'max-len': ['error', 120],
   },
   globals: {
-    document: true,
-    window:   true,
+    document:   true,
+    window:     true,
+    describe:   true,
+    test:       true,
+    it:         true,
+    expect:     true,
+    beforeEach: true,
+    beforeAll:  true,
+    afterEach:  true,
+    afterAll:   true,
   },
 };
