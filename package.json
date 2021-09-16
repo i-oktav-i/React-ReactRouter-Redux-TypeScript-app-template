@@ -5,8 +5,11 @@
   "scripts": {
     "build": "webpack --mode production --env NODE_ENV=prod",
     "dev": "webpack serve --env NODE_ENV=dev",
-    "lint": "eslint 'src/**/*{ts,tsx,js}' --no-fix",
+    "eslint": "eslint 'src/**/*{ts,tsx,js}'",
+    "stylelint": "stylelint 'src/**/*.css'",
+    "tsc": "tsc --noEmit",
     "test": "jest",
+    "check": "npm run eslint && npm run stylelint && npm run tsc && npm run test",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
