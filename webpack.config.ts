@@ -23,12 +23,12 @@ export default (env: Record<string, any>): Configuration & {
     output: {
       path:     path.resolve(__dirname, 'build'),
       filename: isProd
-        ? 'static/[name].[contenthash:8].js'
+        ? 'static/[contenthash:8].js'
         : 'static/[name].js',
       clean:         true,
       publicPath:    '/',
       chunkFilename: isProd
-        ? 'static/[name].[contenthash:8].chunk.js'
+        ? 'static/[contenthash:8].chunk.js'
         : 'static/[name].chunk.js',
     },
     devtool:   isProd ? false : 'source-map',
@@ -85,7 +85,8 @@ export default (env: Record<string, any>): Configuration & {
           ],
         },
         {
-          test:  /\.(svg|png|jpg|gif)$/,
+          test:  /\.(png|svg|jpg|jpeg|gif|webp)$/,
+          // type: 'asset/resource',
           oneOf: [
             {
               test:   /.svg$/,
@@ -99,21 +100,26 @@ export default (env: Record<string, any>): Configuration & {
               },
             },
             {
-              use: {
-                loader:  'url-loader',
-                options: {
-                  limit: 8192,
-                },
+              type:      'asset',
+              generator: {
+                filename: 'static/img/[hash].[ext]',
               },
             },
           ],
+        },
+        {
+          test:      /\.(ttf|otf|woff2)/,
+          type:      'asset/resource',
+          generator: {
+            filename: 'static/fonts/[hash].[ext]',
+          },
         },
       ],
     },
     plugins: [
       new MiniCssExtractPlugin({
         filename: isProd
-          ? 'static/[name].[contenthash:8].css'
+          ? 'static/[contenthash:8].css'
           : 'static/[name].css',
       }),
       new HtmlWebpackPlugin({
