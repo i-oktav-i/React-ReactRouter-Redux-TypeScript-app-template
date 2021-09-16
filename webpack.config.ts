@@ -9,6 +9,7 @@ import EslintWebpackPlugin from 'eslint-webpack-plugin';
 
 // Should resolve problem with devServer,
 // but 'Configuration' extension didn't work
+// import 'webpack-dev-server';
 import { Configuration as DevServer } from 'webpack-dev-server';
 
 export default (env: Record<string, any>): Configuration & {
