@@ -1,4 +1,5 @@
 import path from 'path';
+
 import { Configuration, DefinePlugin } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -122,7 +123,8 @@ export default (env: Record<string, any>): Configuration & {
         publicPath: '/',
       }),
       new EslintWebpackPlugin({
-        files: 'src/**/*{ts,tsx,js}',
+        files:       'src/**/*{ts,tsx,js}',
+        failOnError: false,
       }),
       new StylelintPlugin(),
       new DefinePlugin({

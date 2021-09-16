@@ -44,6 +44,12 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': ['error'],
     indent:                                    'off',
     '@typescript-eslint/indent':               ['error', 2],
+    'no-return-await':                         0,
+    'object-curly-spacing':                    ['error', 'always'],
+    'import/order':                            ['error', {
+      groups:             ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object'],
+      'newlines-between': 'always-and-inside-groups',
+    }],
   },
   globals: {
     document: true,
