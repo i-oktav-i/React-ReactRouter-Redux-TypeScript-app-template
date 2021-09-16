@@ -7,3 +7,4 @@ This is an simple app template that provides following features
 * TypeScript
 * Using .svg like react components
 * Upgraded CSS with Postcss
+* Pre-commit code check
