@@ -1,36 +1,36 @@
 module.exports = {
-  "plugins": [
-    "stylelint-csstree-validator"
+  plugins: [
+    'stylelint-csstree-validator',
   ],
-  "extends": [
-    "stylelint-config-standard",
-    "stylelint-config-css-modules",
-    "stylelint-config-recess-order",
-    "stylelint-config-htmlacademy",
+  extends: [
+    'stylelint-config-standard',
+    'stylelint-config-css-modules',
+    'stylelint-config-recess-order',
+    'stylelint-config-htmlacademy',
   ],
-  "ignoreFiles": [
-    "**/*.tsx"
+  ignoreFiles: [
+    '**/*.tsx',
   ],
-  "rules": {
-    "csstree/validator": {
-      "ignore": ["composes", "var", "font-display"]
+  rules: {
+    'csstree/validator': {
+      ignore: ['composes', 'var', 'font-display'],
     },
-    "function-url-quotes": "always",
-    "string-quotes": "double",
-    "no-empty-source": null,
-    "at-rule-no-unknown": null,
-    'no-descending-specificity': null,
-    "selector-list-comma-newline-after": null,
-    "selector-pseudo-class-no-unknown": [
+    'function-url-quotes':               'always',
+    'string-quotes':                     'double',
+    'no-empty-source':                   null,
+    'at-rule-no-unknown':                null,
+    'no-descending-specificity':         null,
+    'selector-list-comma-newline-after': null,
+    'selector-pseudo-class-no-unknown':  [
       true,
       {
-        "ignorePseudoClasses": [
-          "global",
-          "local"
-        ]
-      }
+        ignorePseudoClasses: [
+          'global',
+          'local',
+        ],
+      },
     ],
-    "color-hex-length": "short",
-    "value-keyword-case": null,
-  }
-}
+    'color-hex-length':   'short',
+    'value-keyword-case': null,
+  },
+};

@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack --mode production --env NODE_ENV=prod",
     "dev": "webpack serve --env NODE_ENV=dev",
-    "eslint": "eslint 'src/**/*{ts,tsx,js}'",
+    "eslint": "eslint './**/*{ts,tsx,js}'",
     "stylelint": "stylelint 'src/**/*.css'",
     "tsc": "tsc --noEmit",
     "test": "jest",
