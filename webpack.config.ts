@@ -76,8 +76,9 @@ export default ({ NODE_ENV }: Record<string, any>): Configuration & {
                 postcssOptions: {
                   plugins: [
                     'postcss-import',
-                    'postcss-mixins',
                     'postcss-nested',
+                    'postcss-simple-vars',
+                    'postcss-mixins',
                     'postcss-custom-media',
                   ],
                 },
