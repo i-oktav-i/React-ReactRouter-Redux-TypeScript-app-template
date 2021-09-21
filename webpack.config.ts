@@ -12,10 +12,10 @@ import EslintWebpackPlugin from 'eslint-webpack-plugin';
 // import 'webpack-dev-server';
 import { Configuration as DevServer } from 'webpack-dev-server';
 
-export default (env: Record<string, any>): Configuration & {
-  devServer: DevServer | null
+export default ({ NODE_ENV }: Record<string, any>): Configuration & {
+  devServer: DevServer | undefined
 } => {
-  const isProd = env.NODE_ENV === 'prod';
+  const isProd = NODE_ENV === 'prod';
 
   return {
     mode:   isProd ? 'production' : 'development',
@@ -87,7 +87,6 @@ export default (env: Record<string, any>): Configuration & {
         },
         {
           test:  /\.(png|svg|jpg|jpeg|gif|webp)$/,
-          // type: 'asset/resource',
           oneOf: [
             {
               test:   /.svg$/,
@@ -130,8 +129,9 @@ export default (env: Record<string, any>): Configuration & {
         publicPath: '/',
       }),
       new EslintWebpackPlugin({
-        files:       'src/**/*{ts,tsx,js}',
-        failOnError: false,
+        extensions:              ['ts', 'tsx', 'js', 'jsx'],
+        failOnError:             false,
+        errorOnUnmatchedPattern: false,
       }),
       new StylelintPlugin(),
       new DefinePlugin({
