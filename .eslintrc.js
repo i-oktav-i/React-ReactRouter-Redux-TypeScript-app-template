@@ -25,6 +25,7 @@ module.exports = {
     'react-hooks/rules-of-hooks':              'error',
     'react-hooks/exhaustive-deps':             'warn',
     'react/jsx-key':                           'error',
+    'react/require-default-props':             0,
     'arrow-parens':                            [2, 'as-needed'],
     'import/extensions':                       0,
     'key-spacing':                             ['warn', {
