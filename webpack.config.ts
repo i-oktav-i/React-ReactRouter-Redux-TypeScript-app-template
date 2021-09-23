@@ -56,7 +56,11 @@ export default ({ NODE_ENV }: Record<string, any>): Configuration & {
           use:  [
             {
               loader:  'babel-loader',
-              options: { presets: ['@babel/preset-react'] },
+              options: {
+                presets: [
+                // Presets here
+                ],
+              },
             },
             'ts-loader',
           ],
