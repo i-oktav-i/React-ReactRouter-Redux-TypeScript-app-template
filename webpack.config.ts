@@ -58,7 +58,7 @@ export default ({ NODE_ENV }: Record<string, any>): Configuration & {
               loader:  'babel-loader',
               options: {
                 presets: [
-                // Presets here
+                  ['@babel/preset-env', { useBuiltIns: 'usage', corejs: '3.18' }],
                 ],
               },
             },
