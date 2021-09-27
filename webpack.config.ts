@@ -84,6 +84,7 @@ export default ({ NODE_ENV }: Record<string, any>): Configuration & {
                     'postcss-simple-vars',
                     'postcss-mixins',
                     'postcss-custom-media',
+                    'autoprefixer',
                   ],
                 },
               },
