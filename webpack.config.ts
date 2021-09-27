@@ -94,9 +94,10 @@ export default ({ NODE_ENV }: Record<string, any>): Configuration & {
           test:  /\.(png|svg|jpg|jpeg|gif|webp)$/,
           oneOf: [
             {
-              test:   /.svg$/,
-              issuer: /\.tsx$/,
-              use:    {
+              test:          /.svg$/,
+              issuer:        /\.tsx$/,
+              resourceQuery: /!(url)/,
+              use:           {
                 loader:  '@svgr/webpack',
                 options: {
                   svgo: true,
