@@ -1,11 +1,11 @@
-import React from 'react';
+import { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchThird, selectFirst, selectSecond } from 'store/modules/selector';
 
 import s from './index.css';
 
-export const HelloWorld: React.FC<{}> = () => {
+export const HelloWorld: FC<{}> = () => {
   const dispatch = useDispatch();
   const value = useSelector(state => state.selector.value);
 

@@ -22,7 +22,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "sourceMap": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "strictNullChecks": true,
   },
   "include": ["src/**/*", "./webpack.config.ts", "./.storybook/**/*"],

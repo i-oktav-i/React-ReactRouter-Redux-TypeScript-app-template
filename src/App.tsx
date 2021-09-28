@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Provider } from 'react-redux';
 import {
   BrowserRouter as Router,
@@ -10,7 +10,7 @@ import {
 import { routes } from 'routes';
 import store from 'store';
 
-export const App: React.FC<{}> = () => (
+export const App: FC<{}> = () => (
   <Provider store={store}>
     <Router>
       <Switch>
@@ -23,6 +23,5 @@ export const App: React.FC<{}> = () => (
         })}
       </Switch>
     </Router>
-
   </Provider>
 );

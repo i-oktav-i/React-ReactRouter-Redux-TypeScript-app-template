@@ -12,6 +12,7 @@ module.exports = {
   rules: {
     'lines-between-class-members':             ['error', 'always', { exceptAfterSingleLine: true }],
     'react/react-in-jsx-scope':                0,
+    'react/jsx-uses-react':                    0,
     'jsx-a11y/click-events-have-key-events':   0,
     'jsx-a11y/no-static-element-interactions': 0,
     'react/jsx-filename-extension':            ['error', { extensions: ['.tsx'] }],
