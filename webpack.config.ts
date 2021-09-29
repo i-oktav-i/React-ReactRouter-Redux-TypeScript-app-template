@@ -12,7 +12,8 @@ import EslintWebpackPlugin from 'eslint-webpack-plugin';
 // import 'webpack-dev-server';
 import { Configuration as DevServer } from 'webpack-dev-server';
 
-export default ({ NODE_ENV }: Record<string, any>): Configuration & {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const conf = ({ NODE_ENV }: Record<string, any>): Configuration & {
   devServer: DevServer | undefined
 } => {
   const isProd = NODE_ENV === 'prod';
@@ -154,3 +155,5 @@ export default ({ NODE_ENV }: Record<string, any>): Configuration & {
     },
   };
 };
+
+export default conf;

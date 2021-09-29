@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Provider } from 'react-redux';
 
-import store from 'store';
+import { store } from 'store';
 
 import { HelloWorld } from '.';
 

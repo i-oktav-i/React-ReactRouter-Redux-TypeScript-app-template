@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { VFC } from 'react';
 import { Provider } from 'react-redux';
 import {
   BrowserRouter as Router,
@@ -8,9 +8,9 @@ import {
 } from 'react-router-dom';
 
 import { routes } from 'routes';
-import store from 'store';
+import { store } from 'store';
 
-export const App: FC<{}> = () => (
+export const App: VFC = () => (
   <Provider store={store}>
     <Router>
       <Switch>
