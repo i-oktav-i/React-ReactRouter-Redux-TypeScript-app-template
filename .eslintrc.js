@@ -13,6 +13,11 @@ module.exports = {
       jsx: true,
     },
   },
+  env: {
+    node:    true,
+    jest:    true,
+    browser: true,
+  },
   settings: {
     'import/resolver': {
       typescript: {
@@ -60,15 +65,5 @@ module.exports = {
     '@typescript-eslint/no-unused-vars':     'error',
   },
   globals: {
-    document:   true,
-    window:     true,
-    describe:   true,
-    test:       true,
-    it:         true,
-    expect:     true,
-    beforeEach: true,
-    beforeAll:  true,
-    afterEach:  true,
-    afterAll:   true,
   },
 };
