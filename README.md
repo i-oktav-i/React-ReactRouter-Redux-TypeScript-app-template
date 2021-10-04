@@ -10,4 +10,4 @@ This simple application template based on Webpack 5 provides the following featu
 * Pre-commit code check
 * Storybook
 
-Use "browserslist" property in [package.json](./package.json#L20) for specifying target browsers. By default, the threshold is 2%. This means that polyfills and code conversion are not applied
+Use "browserslist" property in [package.json](./package.json#L21) for specifying target browsers. By default, the threshold is 2%. This means that polyfills and code conversion are not applied
