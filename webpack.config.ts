@@ -73,7 +73,15 @@ const conf = ({ NODE_ENV }: Record<string, any>): Configuration & {
             MiniCssExtractPlugin.loader,
             {
               loader:  'css-loader',
-              options: { modules: true, importLoaders: 1 },
+              options: {
+                modules: {
+                  auto:           /.css$/,
+                  localIdentName: isProd
+                    ? '[hash:base64:5]'
+                    : '[path][name]__[local]-[hash:base64:5]',
+                },
+                importLoaders: 1,
+              },
             },
             {
               loader:  'postcss-loader',
