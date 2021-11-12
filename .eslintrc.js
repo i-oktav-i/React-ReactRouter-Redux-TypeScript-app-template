@@ -5,18 +5,18 @@ module.exports = {
     'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
   ],
-  plugins:       ['react', '@typescript-eslint', 'react-hooks'],
+  plugins: ['react', '@typescript-eslint', 'react-hooks'],
+  env:     {
+    node:    true,
+    jest:    true,
+    browser: true,
+  },
   parserOptions: {
     sourceType:   'module',
     ecmaVersion:  2020,
     ecmaFeatures: {
       jsx: true,
     },
-  },
-  env: {
-    node:    true,
-    jest:    true,
-    browser: true,
   },
   settings: {
     'import/resolver': {
@@ -26,6 +26,8 @@ module.exports = {
     },
   },
   rules: {
+    'no-shadow':                   0,
+    'newline-before-return':       'error',
     'arrow-parens':                ['error', 'as-needed'],
     'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
     'no-plusplus':                 ['error', { allowForLoopAfterthoughts: true }],
@@ -61,8 +63,10 @@ module.exports = {
       groups:             ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object'],
       'newlines-between': 'always-and-inside-groups',
     }],
-    '@typescript-eslint/no-empty-interface': ['error', { allowSingleExtends: true }],
-    '@typescript-eslint/no-unused-vars':     'error',
+    '@typescript-eslint/no-empty-interface':             ['error', { allowSingleExtends: true }],
+    '@typescript-eslint/no-unused-vars':                 'error',
+    '@typescript-eslint/explicit-module-boundary-types': 0,
+    '@typescript-eslint/no-shadow':                      'error',
   },
   globals: {
   },
