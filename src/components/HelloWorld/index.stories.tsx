@@ -1,20 +1,15 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-
-import { Provider } from 'react-redux';
-
-import { store } from 'store';
+import { Meta } from '@storybook/react';
+import { getStoryCreator } from 'storybook-react-utils';
 
 import { HelloWorld } from '.';
 
-export default {
-  title:     'Hello',
+const componentMeta: Meta = {
   component: HelloWorld,
-} as ComponentMeta<typeof HelloWorld>;
+  title:     'Components / HelloWorld',
+};
 
-const Template: ComponentStory<typeof HelloWorld> = () => (
-  <Provider store={store}>
-    <HelloWorld />
-  </Provider>
-);
+export default componentMeta;
 
-export const Primary = Template.bind({});
+const getStory = getStoryCreator(HelloWorld);
+
+export const Default = getStory({ storyName: 'HelloWorld' });

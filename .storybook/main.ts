@@ -13,18 +13,19 @@ const storybookConfig: StorybookConfig = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
+    // '@storybook/addon-interactions',
   ],
-  core: {
+  framework: '@storybook/react',
+  core:      {
     builder: 'webpack5',
   },
-  logLevel:     'error',
   webpackFinal: config => {
     const newConfig = merge(webpackConfig, config);
     newConfig.module ||= {};
     newConfig.output ||= {};
 
     // Rewriting default rules
-    newConfig.module.rules = webpackConfig.module?.rules;
+    newConfig.module.rules = webpackConfig.module?.rules || [];
     // Storybook config has a publicPath = '', this is cause of loading static files troubles
     newConfig.output.publicPath = '/';
 

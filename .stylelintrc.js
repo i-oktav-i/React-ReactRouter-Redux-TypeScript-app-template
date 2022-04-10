@@ -19,5 +19,6 @@ module.exports = {
     'selector-list-comma-newline-after': null,
     'color-hex-length':                  'short',
     'value-keyword-case':                null,
+    'selector-class-pattern':            null,
   },
 };
