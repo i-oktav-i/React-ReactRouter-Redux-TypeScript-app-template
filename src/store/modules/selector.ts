@@ -11,7 +11,7 @@ const initState: SelectorState = {
 const fetchThird = createAsyncThunk<SelectorState['value']>(
   'FETCH_THIRD',
   async () => {
-    const p = new Promise<SelectorState['value']>(res => setTimeout(() => res('third'), 1000));
+    const p = new Promise<SelectorState['value']>(res => { setTimeout(() => res('third'), 1000); });
 
     return await p;
   },

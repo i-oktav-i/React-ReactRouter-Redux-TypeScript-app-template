@@ -54,6 +54,7 @@ module.exports = {
     'react/jsx-key':                           'error',
     'react/require-default-props':             0,
     'react/jsx-props-no-spreading':            0,
+    'react/function-component-definition':     [2, { namedComponents: 'arrow-function' }],
     'jsx-a11y/click-events-have-key-events':   0,
     'jsx-a11y/no-static-element-interactions': 0,
     'import/prefer-default-export':            0,
