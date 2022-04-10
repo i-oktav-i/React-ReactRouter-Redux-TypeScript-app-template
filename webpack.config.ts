@@ -7,15 +7,9 @@ import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import StylelintPlugin from 'stylelint-webpack-plugin';
 import EslintWebpackPlugin from 'eslint-webpack-plugin';
 
-// Should resolve problem with devServer,
-// but 'Configuration' extension didn't work
-// import 'webpack-dev-server';
-import { Configuration as DevServer } from 'webpack-dev-server';
+import 'webpack-dev-server';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const conf = ({ NODE_ENV }: Record<string, any>): Configuration & {
-  devServer: DevServer | undefined
-} => {
+const conf = ({ NODE_ENV }: Record<string, string>): Configuration => {
   const isProd = NODE_ENV === 'prod';
 
   return {
